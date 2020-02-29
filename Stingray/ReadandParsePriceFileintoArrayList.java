@@ -66,19 +66,7 @@ public class ReadandParsePriceFileintoArrayList {
                 //*    'Type' is the PriceData object/collection
                 //*    'al' is the name of the array list
                 //*********************************************************************************
-                //ArrayList<PriceData> al = new ArrayList<PriceData>();
                 ArrayList<ZoneData> al = new ArrayList<ZoneData>();
-                // Define iterator for looping through Array List
-                //Iterator itr=al.iterator();
-                // Loop through elements in the Array List and print each element
-                //while (itr.hasNext())
-                //	{
-                //	row++;
-                //	PriceData pd=(PriceData)itr.next();
-                //	System.out.println("******************************************");
-                //	System.out.println(row+";"+pd.priceDate + ";"+pd.openPrice + ";"+pd.highPrice+";"+pd.lowPrice+";"+pd.closePrice);
-
-                
                 
                 //*********************************************************************************                
                 //* This will loop thru the price file and perform the following functions:
@@ -168,10 +156,6 @@ public class ReadandParsePriceFileintoArrayList {
 			                	 				//********************************************************************************
 			                	 				// Create new instance of the Price Data object and populate with record from file
 			                	 				//********************************************************************************
-			                	 				//PriceData PriceData_T = new PriceData(timePeriod, priceDate_T,openPrice_T,highPrice_T,lowPrice_T,closePrice_T);
-			        		     		        //PriceData PriceData_T1 = new PriceData(timePeriod,priceDate_T1,openPrice_T1,highPrice_T1,lowPrice_T1,closePrice_T1);
-			        		     		        //PriceData PriceData_T2 = new PriceData(timePeriod,priceDate_T2,openPrice_T2,highPrice_T2,lowPrice_T2,closePrice_T2);
-			        		     		        //PriceData PriceData_T3 = new PriceData(timePeriod, priceDate_T3,openPrice_T3,highPrice_T3,lowPrice_T3,closePrice_T3);
 			                	 				ZoneData PriceData_T = new ZoneData(timePeriod, priceDate_T,openPrice_T,highPrice_T,lowPrice_T,closePrice_T);
 			                	 				ZoneData PriceData_T1 = new ZoneData(timePeriod,priceDate_T1,openPrice_T1,highPrice_T1,lowPrice_T1,closePrice_T1);
 			                	 				ZoneData PriceData_T2 = new ZoneData(timePeriod,priceDate_T2,openPrice_T2,highPrice_T2,lowPrice_T2,closePrice_T2);
@@ -195,15 +179,7 @@ public class ReadandParsePriceFileintoArrayList {
 			        		     		        //********************************************************************************
 			        		     		        PriceData_T.calcPLTools(PriceData_T, PriceData_T1, PriceData_T2, p);
 			        		     		        PriceData_T1.calcPLTools(PriceData_T1, PriceData_T2, PriceData_T3, p);
-			        		     		      
-			        		     		        //********************************************************************************
-			        		     		        // Determine if the price bar for T1 and T2 contain an isolated high or low
-			        		     		        //*
-			        		     		        //* Not calculating, need 4 days incase the isolated high or low is comprise of 2 days
-			        		     		        //********************************************************************************
-			        		     		        //PriceData_T1.setIsolatedHighandLow(PriceData_T, PriceData_T1, PriceData_T2);
-			        		     		        //PriceData_T2.setIsolatedHighandLow(PriceData_T1, PriceData_T2, PriceData_T3);
-			        		     		       
+			        		     		      	        		     		       
 			        		     		        //********************************************************************************
 			        		                    // Add instances T, T1, T2 and T3 of Price Data object to the array list
 			        		     		        //********************************************************************************
@@ -218,11 +194,6 @@ public class ReadandParsePriceFileintoArrayList {
 			        		                    //* Create a new instance of Price data for T1, T2, T3, and T4 based on the values that were in
 			                	 				//* the last 3 rows of array list 'al' (T, T1, T2, and T3) before setting T with the values from the file
 			        		     		        //********************************************************************************
-			                	 				
-			                	 				//PriceData PriceData_T1 = new PriceData(al.get(row -1));
-			                	 				//PriceData PriceData_T2 = new PriceData(al.get(row -2));
-			                	 				//PriceData PriceData_T3 = new PriceData(al.get(row -3));
-			                	 				//PriceData PriceData_T4 = new PriceData(al.get(row -4));
 			                	 				ZoneData PriceData_T1 = new ZoneData(al.get(row -1));
 			                	 				ZoneData PriceData_T2 = new ZoneData(al.get(row -2));
 			                	 				ZoneData PriceData_T3 = new ZoneData(al.get(row -3));
@@ -240,7 +211,6 @@ public class ReadandParsePriceFileintoArrayList {
 			                	 				//********************************************************************************
 			                	 				// Create new instance of the Price Data object T  and populate with record from file
 			                	 				//********************************************************************************
-			                	 				//PriceData PriceData_T = new PriceData(timePeriod,priceDate_T,openPrice_T,highPrice_T,lowPrice_T,closePrice_T);
 			                	 				ZoneData PriceData_T = new ZoneData(timePeriod,priceDate_T,openPrice_T,highPrice_T,lowPrice_T,closePrice_T);
 			        		     		        
 			                	 				//********************************************************************************
@@ -458,23 +428,6 @@ public class ReadandParsePriceFileintoArrayList {
 		     		    	{
 		     		    		f18.write(priceDatePLPal + "," + PriceData_T1.typeOfTrading + " " + PriceData_T1.typeOfTradingDirection + newLine);
 		     		    	}
-		    		    	//f0.write(priceDatePLPal + "," + PriceData_T1.typeOfTrading + " " + PriceData_T1.typeOfTradingDirection + "," + PriceData_T1.zoneBLow  + "," + PriceData_T1.zoneBHigh +  newLine);
-		     		    	//f0.write(priceDatePLPal + "," + PriceData_T1.typeOfTrading + " " + PriceData_T1.typeOfTradingDirection + "," + PriceData_T1.zoneCLow  + "," + PriceData_T1.zoneCHigh +  newLine);
-		     		    	//f0.write(priceDatePLPal + "," + PriceData_T1.typeOfTrading + " " + PriceData_T1.typeOfTradingDirection + "," + PriceData_T1.zoneDLow  + "," + PriceData_T1.zoneDHigh +  newLine);
-		     		    	//f0.write(priceDatePLPal + "," + PriceData_T1.openPrice + "," + PriceData_T1.highPrice  + "," + PriceData_T1.lowPrice + "," + PriceData_T1.closePrice + newLine);
-		     		    	//f0.write(priceDatePLPal + "," + PriceData_T1.typeOfTrading + " " + PriceData_T1.typeOfTradingDirection + newLine);
-		     		    	//f0.write(priceDatePLPal + "," + PriceData_T1.plDot  + "," + PriceData_T1.redBirdDot + newLine);
-		     		    	//f0.write(priceDatePLPal + "," + PriceData_T1.$1_1_Dot + "," + PriceData_T1.$1_1_High + "," + PriceData_T1.$1_1_Low + newLine);
-		     		    	//f0.write(priceDatePLPal + "," + PriceData_T1.$5_1_Up + "," + PriceData_T1.$5_1_Down + "," + PriceData_T1.$5_1_Up_Closed + "," + PriceData_T1.$5_1_Down_Closed + newLine);
-		      		    	//f0.write(priceDatePLPal + "," + PriceData_T1.$5_2_Up + "," + PriceData_T1.$5_2_Down + "," + PriceData_T1.$5_2_Up_Ext + "," + PriceData_T1.$5_2_Down_Ext + newLine);
-		     		    	//f0.write(priceDatePLPal + "," + PriceData_T1.$5_3_Up + "," + PriceData_T1.$5_3_Down + newLine);
-		     		    	//f0.write(priceDatePLPal + "," + PriceData_T1.$6_7_Up + "," + PriceData_T1.$6_7_Down + newLine);
-		     		    	//f0.write(priceDatePLPal + "," + PriceData_T1.$5_3_Up_Closed + "," + PriceData_T1.$5_3_Down_Closed + newLine);
-		     		    	//f0.write(priceDatePLPal + "," + PriceData_T1.$5_9_Up  + "," + PriceData_T1.$5_9_Down + "," + PriceData_T1.$5_9_Up_Ext  + "," + PriceData_T1.$5_9_Down_Ext + newLine);
-		     		    	//f0.write(priceDatePLPal + "," + PriceData_T1.$5_9_Up_Closed + "," + PriceData_T1.$5_9_Down_Closed + newLine);
-		     		    	//f0.write(priceDatePLPal + "," + PriceData_T1.$5_1_Up + "," + PriceData_T1.$5_1_Down  + "," + PriceData_T1.$5_3_Up + "," + PriceData_T1.$5_3_Down + "," + PriceData_T1.$5_9_Up  + "," + PriceData_T1.$5_9_Down + "," + PriceData_T1.$5_2_Up + "," + PriceData_T1.$5_2_Down + "," + PriceData_T1.$5_2_Up_Ext + "," + PriceData_T1.$5_2_Down_Ext + newLine);
-		     		    	//f0.write(priceDatePLPal + "," + PriceData_T1.mcLine + newLine);
-		     		    	//f0.write(priceDatePLPal + "," + dec.format(PriceData_T1.openPrice) + "," + dec.format(PriceData_T1.highPrice)  + "," + dec.format(PriceData_T1.lowPrice) + "," + dec.format(PriceData_T1.closePrice) + "," + PriceData_T1.plDot  + "," + PriceData_T1.mcLine + "," + PriceData_T1.redBirdDot + "," + PriceData_T1.$1_1_Dot + "," + PriceData_T1.$1_1_Low + "," + PriceData_T1.$1_1_High + newLine);
 
 		     		       }
 		     		       f0.close();
